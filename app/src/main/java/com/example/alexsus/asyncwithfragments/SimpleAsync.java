@@ -4,12 +4,12 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class SimpleAsync extends AsyncTask<String, Void, String> {
+class SimpleAsync extends AsyncTask<String, Void, String> {
     private static final String TAG = "ASYNC_TASK";
     private String mMessage;
-    Context mContext;
+    private Context mContext;
 
-    public SimpleAsync(Context context, String message) {
+    SimpleAsync(Context context, String message) {
         mContext = context; //get activity context
         mMessage = message;
     }
