@@ -16,7 +16,6 @@ class SimpleAsync extends AsyncTask<String, Void, String> {
 
     protected void onPreExecute() {
         super.onPreExecute();
-
     }
 
     @Override
