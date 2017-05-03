@@ -32,8 +32,6 @@ public class PlusOneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_plus_one, container, false);
-        mPlusOneButton = (Button) view.findViewById(R.id.plus_one_button);
-
         return view;
     }
 

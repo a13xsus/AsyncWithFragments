@@ -16,12 +16,6 @@
             android:layout_height="wrap_content"
             android:text="@string/hello_plus_one_fragment"/>
 
-        <Button
-            android:id="@+id/plus_one_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Button"/>
     </LinearLayout>
 
 </FrameLayout>
