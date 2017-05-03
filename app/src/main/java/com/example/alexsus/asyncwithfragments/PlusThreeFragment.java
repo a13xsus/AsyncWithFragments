@@ -1,6 +1,7 @@
 package com.example.alexsus.asyncwithfragments;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import android.widget.EditText;
 public class PlusThreeFragment extends Fragment implements View.OnClickListener {
     Button mExecuteAsync;
     EditText mEditMessage;
+    AsyncTask simpleTask;
 
     private OnFragmentInteractionListener mListener;
 
@@ -58,13 +60,16 @@ public class PlusThreeFragment extends Fragment implements View.OnClickListener 
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        if (simpleTask != null)
+            simpleTask.cancel(true);
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.execute_async:
-                new SimpleAsync(getActivity(), mEditMessage.getText().toString()).execute();
+                simpleTask = new SimpleAsync(getActivity(), mEditMessage.getText().toString()).execute();
         }
     }
 
