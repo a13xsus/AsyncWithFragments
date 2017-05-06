@@ -15,7 +15,6 @@ import android.widget.Button;
  * to handle interaction events.
  */
 public class PlusOneFragment extends Fragment {
-    private Button mPlusOneButton;
 
     private OnFragmentInteractionListener mListener;
 
@@ -31,8 +30,7 @@ public class PlusOneFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_plus_one, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_plus_one, container, false);
     }
 
     @Override
