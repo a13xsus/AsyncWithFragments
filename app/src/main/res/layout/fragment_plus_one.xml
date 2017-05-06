@@ -4,19 +4,13 @@
              android:layout_height="match_parent"
              tools:context=".PlusOneFragment">
 
-    <LinearLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_plus_one_fragment"/>
-
-    </LinearLayout>
+        android:drawablePadding="16dp"
+        android:drawableTop="@drawable/ic_printer"
+        android:text="@string/hello_plus_one_fragment"/>
 
 </FrameLayout>
 

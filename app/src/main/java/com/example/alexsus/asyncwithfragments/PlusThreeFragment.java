@@ -17,9 +17,7 @@ import android.widget.EditText;
  * {@link PlusThreeFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class PlusThreeFragment extends Fragment implements View.OnClickListener {
-    Button mExecuteAsync;
-    EditText mEditMessage;
+public class PlusThreeFragment extends Fragment {
     AsyncTask simpleTask;
 
     private OnFragmentInteractionListener mListener;
@@ -36,13 +34,7 @@ public class PlusThreeFragment extends Fragment implements View.OnClickListener 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_plus_three, container, false);
-        mEditMessage = (EditText) view.findViewById(R.id.edit_message);
-        mExecuteAsync = (Button) view.findViewById(R.id.execute_async);
-        mExecuteAsync.setOnClickListener(this);
-
-        return view;
-
+        return inflater.inflate(R.layout.fragment_plus_three, container, false);
     }
 
     @Override
@@ -50,6 +42,7 @@ public class PlusThreeFragment extends Fragment implements View.OnClickListener 
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
+            simpleTask = new SimpleAsync(getActivity()).execute();
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -65,13 +58,6 @@ public class PlusThreeFragment extends Fragment implements View.OnClickListener 
 
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.execute_async:
-                simpleTask = new SimpleAsync(getActivity(), mEditMessage.getText().toString()).execute();
-        }
-    }
 
     /**
      * This interface must be implemented by activities that contain this

@@ -6,12 +6,10 @@ import android.util.Log;
 
 class SimpleAsync extends AsyncTask<String, Void, String> {
     private static final String TAG = "ASYNC_TASK";
-    private String mMessage;
     private Context mContext;
 
-    SimpleAsync(Context context, String message) {
+    SimpleAsync(Context context) {
         mContext = context; //get activity context
-        mMessage = message;
     }
 
     protected void onPreExecute() {
@@ -21,7 +19,7 @@ class SimpleAsync extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         for (int i = 0; i < 20; i++) {
-            Log.d(TAG, "Executing... " + mMessage + " " + i);
+            Log.d(TAG, "Executing AsyncTask... " + i);
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
